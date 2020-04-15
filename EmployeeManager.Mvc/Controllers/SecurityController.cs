@@ -29,6 +29,7 @@ namespace EmployeeManager.Mvc.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public IActionResult Register(Register obj)
         {
             //JOS
@@ -71,6 +72,7 @@ namespace EmployeeManager.Mvc.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public IActionResult SignIn(SignIn obj)
         {
             if (ModelState.IsValid)
@@ -93,6 +95,7 @@ namespace EmployeeManager.Mvc.Controllers
 
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public IActionResult SignOut()
         {
             signinManager.SignOutAsync().Wait();
